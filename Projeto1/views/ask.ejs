@@ -1,0 +1,45 @@
+<!-- tag para importar o header das partials -->
+<%- include ('partials/header.ejs')  %>
+
+<body>
+
+    <%- include ('partials/navbar.ejs')  %>
+
+    <!-- classe do bootstrap para centralizar as margens no centro do navegador -->
+    <div class="container mt-4">
+
+        <!-- deixar os itens em um card -->
+        <div class="card">
+
+            <!-- titulo do card -->
+            <div class="card-header">
+
+                <h3>Perguntar</h3>
+
+            </div>
+
+            <!-- body do card -->
+            <div class="card-body">
+
+                <form action="/admin/addQuestion" method="POST">
+
+                    <label class="mt-4">Titulo:</label>
+                        <input name="titulo" type="text" placeholder="Titulo da pergunta" class="form-control ">
+
+                    <label class="mt-4">Descricao</label>
+                        <textarea name="descricao" placeholder="Descreva sua pergunta" class="form-control"></textarea>
+
+                    <button type="submit" class="btn btn-primary mt-4">Perguntar</button>
+        
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+<%- include ('partials/footer.ejs')  %>

@@ -1,0 +1,41 @@
+    <!-- as partial é utilizada quando um codigo vai ser reutilizado para todas as views html, nesse caso em todas as paginas vamos querer essa nav bar no topo -->
+
+
+    <!-- navbar do bootstrap -->
+
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+        <a class="navbar-brand" href="/">
+            <img src="/img/logo.png">
+        </a>
+        
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+          <div id="navbar-contents" class="navbar-nav">
+
+            <a class="nav-item nav-link" href="/">Home</a>
+    
+            <a class="nav-item nav-link" href="/admin/ask">Perguntar</a>
+
+            <% if (user) { %>
+
+              <a class="nav-item nav-link" href="/logout">Logout</a>
+
+            <% } else { %>
+
+              <a class="nav-item nav-link" href="/login">Login</a>
+
+              <a class="nav-item nav-link" href="/register">Registrar</a>
+
+            <% } %>
+
+          </div>
+
+        </div>
+      </nav>

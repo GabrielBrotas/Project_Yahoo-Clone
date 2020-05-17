@@ -1,0 +1,52 @@
+<!-- tag para importar o header das partials -->
+<%- include ('partials/header.ejs')  %>
+
+<body>
+
+    <%- include ('partials/navbar.ejs')  %>
+ 
+    <div class="container">
+
+        <%- include ('partials/msg.ejs') %>
+        
+        <hr>
+        <h1>Perguntas:</h1>
+        <hr>
+
+        <% perguntas.forEach( pergunta => { %>
+            <div class="card mt-4">
+                <div class="card-body ">
+
+                    <h4><%= pergunta.titulo %></h4>
+
+                </div>
+                <div class="card-footer">
+                   
+                    <div class="display-flex">
+                        <a href="/question/<%= pergunta.id%>"><button class="btn btn-primary">Responder</button></a>
+                    
+                        <% if (user){%>
+                            <% if(user.eAdmin == 1) { %>
+
+                                <form action="admin/delete/<%= pergunta.id%>" method="POST">
+                                    <button class="btn btn-danger">Deletar</button>
+                                </form>
+        
+                            <% } %>
+                        <%}%>
+
+                    </div>
+                        
+
+                </div>
+
+            </div>
+            
+        <% }) %>
+
+    </div>
+    
+
+</body>
+
+<%- include ('partials/footer.ejs')  %>

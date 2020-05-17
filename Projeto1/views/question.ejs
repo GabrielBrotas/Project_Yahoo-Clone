@@ -1,0 +1,71 @@
+<!-- tag para importar o header das partials -->
+<%- include ('partials/header.ejs')  %>
+
+<body>
+
+    <%- include ('partials/navbar.ejs')  %>
+ 
+    <div class="container">
+
+        <%- include ('partials/msg.ejs') %>
+        
+        <hr>
+        <h1><%= question.titulo %></h1>
+        
+        <p><%= question.descricao%></p>
+        <hr>
+
+        <form action="/admin/answer" method="POST">
+
+            <label>Resposta</label>
+                <textarea name="body" placeholder="Digite sua resposta"  class="form-control" required></textarea>
+            
+            <!-- esse campo vai servir de auxilio para guar o id da pergunta -->
+            <input type="hidden" name="questionID" value="<%= question.id %>">
+
+            <button type="submit" class="btn btn-primary mt-2">Responder</button>
+
+        </form>
+
+        
+
+        <h3 class="mt-5 ">Respostas:</h3>
+        <hr>
+        <% if(answer != 0) { %>
+
+            <% answer.forEach( resposta => { %>
+
+                <div class="card mb-2">
+
+                    <div class="card-body">
+
+                        <%= resposta.body %>
+
+                    </div>
+                </div>
+
+            <% }) %>
+
+        <%} else {%>
+                <div class="card mb-2">
+
+                    <div class="card-body">
+
+                        <p>Nenhuma resposta para essa pergunta.</p>
+
+                    </div>
+                </div>
+        
+        <% } %>
+
+           
+
+
+        
+
+
+    </div>
+    
+</body>
+
+<%- include ('partials/footer.ejs')  %>

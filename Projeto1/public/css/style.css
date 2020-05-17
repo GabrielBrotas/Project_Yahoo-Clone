@@ -1,0 +1,24 @@
+body{
+    background-color: #eceff1;
+}
+
+#item-navbar {
+    color: #e4e5e6e6;
+}
+
+#navbar-contents a{
+
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+
+}
+
+.display-flex{
+    display: flex;
+}
+
+.display-flex form{
+    flex-grow: 1;
+    text-align: end;
+}
+
