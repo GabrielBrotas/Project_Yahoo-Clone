@@ -19,7 +19,7 @@ const Sequelize = require('sequelize')
     
 */
 
-const connection = new Sequelize('guiaperguntas', 'root', 'Gabriel22*/', {
+const connection = new Sequelize('guiaperguntas', 'root', '<sua senha>', {
     host: 'localhost', // local que esta rodando
     dialect: 'mysql'   // banco de dados 
 })
